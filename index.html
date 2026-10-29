@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeds of Sincerity</title>
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Pinyon+Script&family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+<style>
+/* Layout concept: a printed-poster storefront. Warm beige paper, one soft-focus flower with film grain as the hero,
+   huge tight Montserrat caps with a script swash initial, and crisp cards that sit sharp against the blur.
+   Moss green carries the eco promise; poppy red is the only action color. */
+:root {
+  --bg: #F3EBDF;
+  --tint: #EADDCB;
+  --surface: #FBF6EE;
+  --ink: #3B2420;
+  --muted: #6D5850;
+  --line: #DCCBB4;
+  --strong: #3B2420;
+  --strong-ink: #FBF1E2;
+  --accent: #B3262E;
+  --accent-ink: #FFF8EE;
+  --cream: #FBF1E2;
+  --moss: #44543A;
+  --moss-deep: #34412C;
+  --moss-ink: #F6EFE0;
+  --moss-soft: #C5D0B8;
+  --focus: #1A6FD1;
+  --font-display: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Pinyon Script", "Snell Roundhand", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1D1413; --tint: #271A18; --surface: #2B1D1B; --ink: #F4E9DA; --muted: #C6B2A4; --line: #4A3733;
+    --strong: #F4E9DA; --strong-ink: #2B1512; --accent: #F0745F; --accent-ink: #2B0F0B;
+    --moss: #26331F; --moss-deep: #1B2416; --focus: #7DB7FF; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1D1413; --tint: #271A18; --surface: #2B1D1B; --ink: #F4E9DA; --muted: #C6B2A4; --line: #4A3733;
+  --strong: #F4E9DA; --strong-ink: #2B1512; --accent: #F0745F; --accent-ink: #2B0F0B;
+  --moss: #26331F; --moss-deep: #1B2416; --focus: #7DB7FF; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; font-weight: 500; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--surface); z-index: 60; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; letter-spacing: -0.035em; line-height: 1.02; font-weight: 800; }
+h2 { text-transform: uppercase; font-size: clamp(2rem, 4.6vw, 3.4rem); }
+h2::first-letter { font-family: var(--font-script); font-weight: 400; font-size: 1.5em; letter-spacing: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 28px; border-radius: 999px; border: 1.5px solid transparent; font: 700 15px/1 var(--font-body); letter-spacing: .02em; cursor: pointer; text-decoration: none; transition: transform .15s, background-color .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(59,36,32,.55); }
+.btn-accent { background: var(--accent); color: var(--accent-ink); }
+.btn-strong { background: var(--strong); color: var(--strong-ink); }
+.btn-cream { background: var(--cream); color: #5A1620; }
+.btn-line { border-color: rgba(251,241,226,.8); color: var(--cream); background: transparent; }
+.btn-ghost { border-color: var(--strong); color: var(--ink); background: transparent; }
+.btn-sm { min-height: 42px; padding: 0 20px; font-size: 14px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.pill { display: inline-block; font: 700 11px/1 var(--font-body); letter-spacing: .2em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; border: 1.5px solid currentColor; color: var(--accent); }
+
+/* Announcement + header */
+.announce { background: var(--moss-deep); color: var(--moss-ink); font-size: 13px; letter-spacing: .04em; text-align: center; padding: 9px 16px; }
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--surface); border-bottom: 1px solid var(--line); }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand .wm { font: 800 15px/1 var(--font-display); letter-spacing: -.01em; text-transform: uppercase; }
+.brand .wm i { font: 400 2.1em/0 var(--font-script); letter-spacing: 0; font-style: normal; text-transform: none; margin-right: -.02em; }
+.nav { display: flex; align-items: center; gap: 26px; font-weight: 600; font-size: 14px; letter-spacing: .02em; }
+.nav a:not(.btn) { text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; }
+.nav a:not(.btn):hover { border-color: var(--accent); }
+.count { background: var(--cream); color: #5A1620; min-width: 22px; height: 22px; border-radius: 999px; display: inline-grid; place-items: center; font-size: 12px; padding: 0 6px; }
+
+/* Poster hero */
+.hero-wrap { padding-block: 24px 0; }
+.poster { position: relative; isolation: isolate; border-radius: 32px; overflow: hidden; color: var(--cream); background: #E4D3BF; min-height: 660px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 24px; align-items: center; padding: clamp(28px, 5vw, 64px); }
+.poster .dream { position: absolute; inset: 0; z-index: -2; }
+.poster .dream svg, .scene .dream svg, .stage .dream svg { width: 100%; height: 100%; display: block; }
+.poster::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(95deg, rgba(58,14,22,.62), rgba(58,14,22,.22) 62%, rgba(58,14,22,0)); }
+.poster .pill { color: var(--cream); }
+.poster h1 { font-size: clamp(2.4rem, 5.6vw, 4.9rem); text-transform: uppercase; margin-top: 22px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.poster h1 .sw { font-family: var(--font-script); font-weight: 400; font-size: 1.55em; letter-spacing: 0; line-height: 0; margin-right: -.02em; }
+.poster .big { margin-top: 26px; display: grid; gap: 2px; font: 800 clamp(1.5rem, 3.2vw, 2.4rem)/1.02 var(--font-display); text-transform: uppercase; letter-spacing: -.045em; }
+.poster p.small { margin-top: 22px; font-size: 14px; font-weight: 600; max-width: 28em; line-height: 1.55; }
+.poster .cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+.poster .right { display: grid; gap: 22px; justify-items: end; align-self: stretch; align-content: space-between; }
+.fan { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1 / .98; margin-inline: auto; }
+.fan .card { position: absolute; width: 45%; box-shadow: 0 26px 40px -16px rgba(40,8,14,.6); animation: bob 8s ease-in-out infinite; }
+.fan .c1 { left: 1%; top: 16%; rotate: -9deg; }
+.fan .c2 { left: 27%; top: 0; rotate: 2deg; z-index: 2; animation-delay: -2s; }
+.fan .c3 { left: 54%; top: 18%; rotate: 10deg; animation-delay: -4s; }
+@keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+.from { text-align: right; text-transform: uppercase; }
+.from b { display: block; font: 800 clamp(2rem, 4.4vw, 3.4rem)/1 var(--font-display); letter-spacing: -.05em; }
+.from span { font: 700 12px/1.4 var(--font-body); letter-spacing: .08em; }
+
+/* Trust strip */
+.trust ul { list-style: none; margin: 0; padding: 30px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.trust li { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.trust svg { flex: none; color: var(--moss); }
+
+/* Sections */
+section { padding-block: 88px; }
+.sec-head { max-width: 42em; margin-bottom: 44px; display: grid; gap: 16px; justify-items: start; }
+.sec-head p { color: var(--muted); font-size: 1.05rem; font-weight: 500; max-width: 36em; }
+.tint { background: var(--tint); }
+
+/* Sincere favorites */
+.combos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.combo { background: var(--surface); border: 1px solid var(--line); border-radius: 26px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; box-shadow: 0 18px 32px -24px rgba(59,36,32,.5); }
+.scene { position: relative; isolation: isolate; height: 360px; display: grid; place-items: center; overflow: hidden; }
+.scene .dream { position: absolute; inset: 0; z-index: -1; }
+.scene .card { width: min(56%, 190px); rotate: var(--tilt); transition: rotate .25s, translate .25s; box-shadow: 0 22px 32px -14px rgba(40,8,14,.6); }
+.combo:hover .scene .card { rotate: 0deg; translate: 0 -4px; }
+.combo .meta { padding: 22px 24px 24px; display: grid; gap: 6px; align-content: start; }
+.combo h3 { font-size: 1.35rem; text-transform: uppercase; }
+.combo .meta p { font-size: 13px; color: var(--muted); font-weight: 500; }
+.combo .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.combo .row b { font: 800 1.3rem var(--font-display); letter-spacing: -.03em; }
+
+/* How it grows */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.steps li { border-radius: 26px; padding: 32px; display: grid; gap: 12px; align-content: start; background: var(--surface); border: 1px solid var(--line); min-height: 250px; }
+.steps li::before { counter-increment: s; content: "0" counter(s); font: 900 3.4rem/1 var(--font-display); letter-spacing: -.06em; color: var(--accent); }
+.steps h3 { font-size: 1.5rem; text-transform: uppercase; }
+.steps p { color: var(--muted); }
+
+/* Studio */
+.builder { display: grid; grid-template-columns: minmax(0, 410px) minmax(0, 1fr); gap: 44px; align-items: start; }
+.preview { position: sticky; top: calc(92px + env(safe-area-inset-top, 0px)); display: grid; gap: 14px; justify-items: stretch; }
+.viewtog { display: flex; gap: 8px; justify-content: center; }
+.stage { position: relative; isolation: isolate; border-radius: 28px; overflow: hidden; padding: 36px 24px; display: grid; place-items: center; min-height: 480px; border: 1px solid var(--line); }
+.stage .dream { position: absolute; inset: 0; z-index: -1; }
+.stage .card { width: calc(min(100%, 290px) * var(--sc, 1)); box-shadow: 0 26px 38px -16px rgba(40,8,14,.6); rotate: -2deg; transition: width .25s; }
+.sizebadge { position: absolute; left: 14px; bottom: 12px; font: 700 11px/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--cream); background: rgba(58,14,22,.62); padding: 7px 10px; border-radius: 999px; }
+.price { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px 20px; display: grid; gap: 12px; }
+.price dl { margin: 0; display: grid; gap: 6px; font-size: 14px; }
+.price dl div { display: flex; justify-content: space-between; gap: 12px; }
+.price dt { color: var(--muted); }
+.price dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+.price .each { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding-top: 12px; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: .12em; }
+.price .each strong { font: 800 2rem/1 var(--font-display); letter-spacing: -.04em; }
+.env { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--muted); }
+.env svg { flex: none; }
+.controls { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: 36px; display: grid; gap: 44px; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; gap: 18px; }
+legend { padding: 0; font: 800 1.35rem/1.2 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 12px; }
+legend::before { content: attr(data-n); width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent); display: grid; place-items: center; font: 800 14px var(--font-display); flex: none; letter-spacing: 0; }
+.sub { font: 700 12px/1.2 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: -6px; }
+.hint { color: var(--muted); font-size: .9rem; margin-top: -8px; }
+.group { display: grid; gap: 12px; }
+.opts { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { position: relative; }
+.chip input, .sw input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.chip span { display: inline-flex; align-items: center; gap: 6px; min-height: 42px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); font-weight: 600; font-size: 14px; transition: background-color .12s, border-color .12s; }
+.chip span em { font-style: normal; color: var(--muted); font-weight: 500; font-size: 12px; }
+.chip:hover span { border-color: var(--strong); }
+.chip:has(input:checked) span { background: var(--strong); color: var(--strong-ink); border-color: var(--strong); }
+.chip:has(input:checked) span em { color: inherit; opacity: .8; }
+.chip:has(input:focus-visible), .sw:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 999px; }
+.chip.sm span { min-height: 36px; padding: 0 14px; font-size: 13px; }
+.sw { position: relative; display: grid; justify-items: center; gap: 6px; width: 78px; font-size: 12px; font-weight: 600; text-align: center; }
+.sw i { width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid rgba(59,36,32,.3); background: var(--c); transition: transform .12s; }
+.sw.sm { width: 64px; }
+.sw.sm i { width: 40px; height: 40px; }
+.sw:hover i { transform: scale(1.06); }
+.sw:has(input:checked) i { border-color: var(--strong); box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--strong); }
+.sw:has(input:checked) { color: var(--ink); }
+.seeds { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 12px; }
+.seed { position: relative; background: var(--surface); border: 1.5px solid var(--line); border-radius: 20px; transition: border-color .12s, transform .12s; }
+.seed[hidden] { display: none; }
+.seed:hover { border-color: var(--strong); transform: translateY(-2px); }
+.seed:has(.pick[aria-pressed="true"]) { border-color: var(--strong); box-shadow: 0 0 0 2px var(--strong); background: var(--tint); }
+.seed:has(.pick[aria-pressed="true"])::after { content: "Added"; position: absolute; top: 12px; right: 12px; font: 700 10px/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; background: var(--strong); color: var(--strong-ink); padding: 5px 8px; border-radius: 999px; pointer-events: none; }
+.pick { display: grid; gap: 6px; width: 100%; text-align: left; padding: 14px; background: transparent; border: 0; color: inherit; font: inherit; cursor: pointer; border-radius: 20px; }
+.pick svg { width: 60px; height: 60px; }
+.pick b { font: 800 1rem/1.2 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; }
+.pick small { color: var(--muted); font-size: 12px; line-height: 1.45; font-weight: 500; }
+.pick small:last-child { padding-right: 30px; }
+.info { position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--strong); background: var(--surface); color: var(--ink); font: 700 15px/1 var(--font-script); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.info:hover { background: var(--strong); color: var(--strong-ink); }
+.status { min-height: 1.4em; font-size: 13px; color: var(--muted); }
+.summary { font-weight: 700; font-size: 14px; }
+.fields { display: grid; gap: 14px; }
+.row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+label.f { display: grid; gap: 6px; font-weight: 700; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+label.f .cnt { font-weight: 500; color: var(--muted); justify-self: end; margin-top: -20px; letter-spacing: 0; text-transform: none; }
+input[type="text"], textarea { width: 100%; font: 500 16px/1.45 var(--font-body); letter-spacing: 0; text-transform: none; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 14px; padding: 13px 15px; }
+textarea { resize: vertical; min-height: 96px; }
+input[type="text"]:hover, textarea:hover { border-color: var(--strong); }
+.check { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 16px; cursor: pointer; font-weight: 600; font-size: 14px; }
+.check:has(input:checked) { border-color: var(--strong); background: var(--tint); }
+.check input { width: 20px; height: 20px; accent-color: var(--accent); flex: none; margin: 0; }
+.check em { margin-left: auto; font-style: normal; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.warn { font-size: 13px; color: var(--accent); font-weight: 600; min-height: 1.3em; }
+.buy { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 28px; }
+.qty { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); }
+.qty button { width: 46px; height: 46px; border: 0; background: transparent; color: var(--ink); font: 700 20px/1 var(--font-body); cursor: pointer; border-radius: 999px; }
+.qty button:hover { background: var(--tint); }
+.qty output { min-width: 38px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* Card (shared) */
+.card { --paper: #FFC2D4; --ink-c: #3B2420; position: relative; container-type: inline-size; aspect-ratio: 5 / 7; background: var(--paper); border-radius: 6px; overflow: hidden; color: var(--ink-c); }
+.card > svg { position: absolute; display: block; }
+.card .speck { inset: 0; width: 100%; height: 100%; }
+.card .art { left: 6%; top: 6%; width: 88%; height: auto; }
+.card .copy { position: absolute; inset: 49% 9% 11% 9%; display: flex; flex-direction: column; gap: 2.2cqw; overflow: hidden; }
+.card .hl { font: 800 8cqw/1.02 var(--font-display); letter-spacing: -.045em; text-transform: uppercase; }
+.card .to { font: 700 4cqw/1.2 var(--font-body); }
+.card .msg { font: 500 3.9cqw/1.42 var(--font-body); overflow-wrap: anywhere; }
+.card .from { margin-top: auto; font: 700 4cqw/1.2 var(--font-body); }
+.card .seal { position: absolute; left: 0; right: 0; bottom: 3.4cqw; text-align: center; font: 700 2.3cqw/1 var(--font-body); letter-spacing: .18em; text-transform: uppercase; opacity: .72; }
+.card[data-font="script"] .hl { font: 400 13cqw/.92 var(--font-script); letter-spacing: 0; text-transform: none; }
+.card[data-font="script"] .to, .card[data-font="script"] .from { font-family: var(--font-body); }
+.card[data-font="hand"] .hl { font: 700 12cqw/.9 "Caveat", cursive; letter-spacing: 0; text-transform: none; }
+.card[data-font="hand"] .to, .card[data-font="hand"] .from { font: 700 6cqw/1.1 "Caveat", cursive; }
+.card[data-font="hand"] .msg { font: 500 6cqw/1.08 "Caveat", cursive; }
+.card[data-font="serif"] .hl { font: italic 600 11cqw/.92 "Cormorant Garamond", Georgia, serif; letter-spacing: -.01em; text-transform: none; }
+.card[data-font="serif"] .to, .card[data-font="serif"] .from { font: italic 600 5.2cqw/1.15 "Cormorant Garamond", Georgia, serif; }
+.card[data-font="serif"] .msg { font: 500 5.1cqw/1.2 "Cormorant Garamond", Georgia, serif; }
+.card[data-border="thin"]::after, .card[data-border="double"]::after { content: ""; position: absolute; inset: 3.6cqw; border: .35cqw solid currentColor; opacity: .5; pointer-events: none; border-radius: 2px; }
+.card[data-border="double"]::before { content: ""; position: absolute; inset: 5.8cqw; border: .25cqw solid currentColor; opacity: .38; pointer-events: none; border-radius: 1px; }
+.card[data-side="back"] .copy { inset: 9% 10% 11% 10%; gap: 2.6cqw; }
+.card[data-side="back"] .hl { font-size: 7.4cqw; }
+.card[data-side="back"][data-font="script"] .hl { font-size: 12cqw; }
+.card[data-side="back"][data-font="hand"] .hl { font-size: 11cqw; }
+.card[data-side="back"][data-font="serif"] .hl { font-size: 10cqw; }
+.card .stepl { margin: 0; padding: 0; list-style: none; display: grid; gap: 2cqw; font: 600 3.5cqw/1.35 var(--font-body); }
+.card .stepl li { display: grid; grid-template-columns: 5.5cqw 1fr; gap: 2cqw; }
+.card .stepl b { font-weight: 800; }
+.card .bnote { font: 500 3.7cqw/1.4 var(--font-body); border-top: .3cqw solid currentColor; padding-top: 2.4cqw; opacity: .95; overflow-wrap: anywhere; }
+.card .bseeds { margin-top: auto; font: 700 3cqw/1.3 var(--font-body); letter-spacing: .08em; text-transform: uppercase; }
+.card[data-font="hand"] .stepl, .card[data-font="hand"] .bnote { font-family: "Caveat", cursive; font-weight: 600; font-size: 5.2cqw; line-height: 1.05; }
+.card[data-font="serif"] .stepl, .card[data-font="serif"] .bnote { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 4.6cqw; line-height: 1.15; }
+
+/* Seed pouch (basket) */
+.basket { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: 36px; display: grid; gap: 22px; max-width: 780px; box-shadow: 0 24px 40px -30px rgba(59,36,32,.5); }
+.basket ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.basket li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.basket li p { color: var(--muted); font-size: 13px; grid-column: 1; }
+.basket li strong { grid-column: 1; font-weight: 700; }
+.basket li .amt { grid-column: 2; grid-row: 1; font-weight: 700; font-variant-numeric: tabular-nums; }
+.basket li button { grid-column: 2; grid-row: 2; justify-self: end; background: none; border: 0; color: var(--accent); font: 700 13px var(--font-body); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; padding: 4px; }
+.basket .empty { color: var(--muted); }
+.total { display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; font-size: 1.3rem; font-variant-numeric: tabular-nums; text-transform: uppercase; letter-spacing: -.02em; }
+.basket .note { color: var(--muted); font-size: 13px; }
+
+/* Promise + FAQ */
+.hook { padding-block: 76px; }
+.hookgrid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; align-items: center; }
+.hook h2 { font-size: clamp(2.4rem, 5.6vw, 4.6rem); margin-top: 18px; }
+.hookr { display: grid; gap: 22px; }
+.hookp { font-size: 1.15rem; line-height: 1.55; font-weight: 600; }
+.readplant { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.readplant li { display: flex; align-items: center; gap: 12px; font: 800 1rem/1.2 var(--font-display); letter-spacing: -.01em; text-transform: uppercase; }
+.readplant li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+.eco { background: var(--moss); color: var(--moss-ink); }
+.ecohead { display: grid; gap: 14px; margin-bottom: 44px; max-width: 40em; }
+.ecohead p { color: var(--moss-soft); font-size: 1.05rem; }
+.eco-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; list-style: none; padding: 0; margin: 0; }
+.eco-grid li { border-top: 1.5px solid var(--moss-soft); padding-top: 20px; display: grid; gap: 8px; align-content: start; }
+.eco-grid svg { color: var(--moss-soft); margin-bottom: 6px; }
+.eco-grid .tag { font: 700 11px/1 var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--moss-soft); }
+.eco-grid b { font: 800 1.15rem/1.2 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; }
+.eco-grid li > span:last-child { color: var(--moss-soft); font-size: 14px; line-height: 1.55; }
+.faq { display: grid; gap: 12px; max-width: 820px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 0 24px; }
+.faq details[open] { border-color: var(--strong); }
+.faq summary { cursor: pointer; font: 700 1rem/1.4 var(--font-body); padding: 20px 0; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.5rem; line-height: 1; color: var(--accent); flex: none; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding-bottom: 22px; color: var(--muted); }
+footer { background: var(--moss-deep); color: var(--moss-ink); padding-block: 44px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+footer p { color: var(--moss-soft); font-size: 13px; letter-spacing: .04em; }
+
+/* Flower pop-up */
+dialog { border: 0; border-radius: 28px; padding: 0; width: min(520px, calc(100vw - 32px)); background: var(--surface); color: var(--ink); box-shadow: 0 40px 80px -20px rgba(20,6,6,.6); }
+dialog::backdrop { background: rgba(40,16,14,.6); backdrop-filter: blur(4px); }
+.dlg-top { position: relative; isolation: isolate; height: 190px; display: grid; place-items: center; overflow: hidden; }
+.dlg-top .dream { position: absolute; inset: 0; z-index: -1; }
+.dlg-top .dream svg { width: 100%; height: 100%; display: block; }
+.dlg-top > svg { width: 120px; height: 120px; filter: drop-shadow(0 12px 14px rgba(40,8,14,.35)); }
+.dlg-x { position: absolute; top: 14px; right: 14px; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--surface); color: var(--ink); font: 700 20px/1 var(--font-body); cursor: pointer; }
+.dlg-body { padding: 26px 28px 28px; display: grid; gap: 14px; }
+.dlg-body h3 { font-size: 2rem; text-transform: uppercase; }
+.dlg-body h3::first-letter { font-family: var(--font-script); font-weight: 400; font-size: 1.4em; letter-spacing: 0; }
+.dlg-body .latin { font: italic 500 15px var(--font-body); color: var(--muted); margin-top: -8px; }
+.dlg-body .meaning { font: 400 1.5rem/1.15 var(--font-script); color: var(--accent); }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; }
+.facts div { background: var(--tint); border-radius: 14px; padding: 10px 12px; }
+.facts dt { font: 700 10px/1.2 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 4px 0 0; font-weight: 700; font-size: 14px; }
+.dlg-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 24px); background: var(--strong); color: var(--strong-ink); padding: 14px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 80; max-width: calc(100vw - 32px); text-align: center; }
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 960px) {
+  .poster { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .poster .right { justify-items: stretch; }
+  .from { text-align: left; }
+  .builder { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .preview { position: static; }
+  .combos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .steps li { min-height: 0; }
+  .eco-grid, .trust ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hookgrid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  section { padding-block: 60px; }
+  .nav .hide-md { display: none; }
+}
+@media (max-width: 600px) {
+  .combos { grid-template-columns: minmax(0, 1fr); }
+  .row2 { grid-template-columns: minmax(0, 1fr); }
+  .controls { padding: 22px; gap: 38px; }
+  .basket { padding: 22px; }
+  .eco-grid { grid-template-columns: minmax(0, 1fr); }
+  .trust ul { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .nav { gap: 12px; }
+  .brand .wm { font-size: 12px; }
+  .poster { border-radius: 24px; }
+  .stage { min-height: 420px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+</head>
+<body>
+<div class="announce">Every card ships in a paper envelope with a planting guide.</div>
+<header class="site-head">
+  <div class="wrap top">
+    <a class="brand" href="#top" aria-label="Seeds of Sincerity home">
+      <svg width="38" height="38" viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="19" fill="#B3262E"/><path d="M19 31V18" stroke="#FBF1E2" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M19 21c-5.5 0-8.5-3-8.5-8.5 5.5 0 8.5 3 8.5 8.5Z" fill="#FBF1E2"/><path d="M19 18c0-4.5 2.8-7.5 7.5-7.5 0 4.5-2.8 7.5-7.5 7.5Z" fill="#F1B48A"/></svg>
+      <span class="wm"><i>S</i>eeds of Sincerity</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-md" href="#combos">Sincere favorites</a>
+      <a class="hide-md" href="#how">How it grows</a>
+      <a href="#build">Sow yours</a>
+      <a class="hide-md" href="#eco">Eco promise</a>
+      <a class="btn btn-accent btn-sm" href="#basket">Seed pouch <span class="count" id="navCount">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero-wrap">
+    <div class="wrap">
+      <div class="poster">
+        <div class="dream" id="heroDream" aria-hidden="true"></div>
+        <div>
+          <span class="pill">Plantable seed-paper cards</span>
+          <h1>SEEDS OF<br>SINCERITY</h1>
+          <div class="big" aria-hidden="true"><span>14 flowers &amp; herbs</span><span>8 paper colors</span></div>
+          <p class="small">Say it sincerely. Watch it grow. Choose your paper, pick your flowers, write what you mean, and your friend plants the card.</p>
+          <div class="cta">
+            <a class="btn btn-cream" href="#build">Sow your sentiment</a>
+            <a class="btn btn-line" href="#combos">See sincere favorites</a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="fan" aria-hidden="true">
+            <div class="card c1" id="fan1"></div>
+            <div class="card c3" id="fan3"></div>
+            <div class="card c2" id="fan2"></div>
+          </div>
+          <div class="from"><b>From $4.00</b><span>Per card, seeds included</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="4" width="18" height="24" rx="3"/><path d="M12 11h8M12 16h8M12 21h5"/></svg>Recycled seed paper</li>
+        <li><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="16" cy="17" rx="6" ry="9" transform="rotate(35 16 17)"/><path d="M16 8c0-3 1-4 3-5"/></svg>Seeds pressed in</li>
+        <li><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10l12-6 12 6v13l-12 6-12-6z"/><path d="M4 10l12 6 12-6M16 16v13"/></svg>Paper packaging</li>
+        <li><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 22l3 3M25 7l-3 3M10 22l-3 3"/></svg>Grows in beds or pots</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="hook" class="tint hook">
+    <div class="wrap hookgrid">
+      <div>
+        <span class="pill">Our promise to you</span>
+        <h2>Some gifts fade. Ours flourish.</h2>
+      </div>
+      <div class="hookr">
+        <p class="hookp">Why let a meaningful message end up in the trash when it could grow into something beautiful?</p>
+        <ul class="readplant">
+          <li>Read the card.</li>
+          <li>Plant the paper.</li>
+          <li>Watch a themed memory grow.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="combos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">Sincere favorites</span>
+        <h2>Sentiments, ready to sow</h2>
+        <p>Six combinations we love. Open one in the studio and make every detail yours.</p>
+      </div>
+      <div class="combos" id="comboGrid"></div>
+    </div>
+  </section>
+
+  <section id="how" class="tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">How it grows</span>
+        <h2>From sentiment to sprout</h2>
+        <p>A card you design yourself, and a gift that keeps going long after the occasion.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Sow your sentiment</h3><p>Pick the paper and up to three flowers or herbs. The seeds are pressed into the paper, so you can see tiny specks where they sit.</p></li>
+        <li><h3>Write it sincerely</h3><p>Add a name and a message from the heart. Ballpoint and pencil work well on seed paper. Skip wet markers, which can soak through.</p></li>
+        <li><h3>Plant and watch</h3><p>Lay the card under about ¼ inch (6 mm) of soil, keep it damp, and give it sun. Seedlings usually show up in one to three weeks.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">The sincerity studio</span>
+        <h2>Sow your sentiment</h2>
+        <p>Five steps, and the card updates as you go. Flip it over to see the back, and tap the small i on any flower to read about it.</p>
+      </div>
+      <div class="builder">
+        <div class="preview" aria-label="Card preview">
+          <div class="viewtog opts" id="viewOpts" role="radiogroup" aria-label="Card side"></div>
+          <div class="stage" id="stage">
+            <div class="dream" id="stageDream" aria-hidden="true"></div>
+            <div class="card" id="liveCard" role="img" aria-label="Preview of your card"></div>
+            <span class="sizebadge" id="sizeBadge">Classic · 5 × 7 in</span>
+          </div>
+          <div class="price">
+            <dl id="breakdown"></dl>
+            <div class="each"><span>Each card</span><strong id="unitPrice">$5.50</strong></div>
+            <div class="env" id="envRow"></div>
+          </div>
+        </div>
+
+        <form class="controls" id="builderForm" novalidate>
+          <fieldset>
+            <legend data-n="1">Choose the moment</legend>
+            <div class="opts" id="occasionOpts"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-n="2">Pick your paper</legend>
+            <div class="group">
+              <p class="sub">Color</p>
+              <div class="opts" id="paperOpts"></div>
+              <p class="hint">Colored with plant-based dye.</p>
+            </div>
+            <div class="group">
+              <p class="sub">Size</p>
+              <div class="opts" id="sizeOpts"></div>
+            </div>
+            <div class="group">
+              <p class="sub">Border</p>
+              <div class="opts" id="borderOpts"></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-n="3">Select your seeds</legend>
+            <p class="hint">Pick one to three. A mixed card grows a small patch.</p>
+            <div class="opts" id="seedFilters" role="radiogroup" aria-label="Filter seeds"></div>
+            <div class="seeds" id="seedGrid"></div>
+            <p class="summary" id="seedSummary"></p>
+            <p class="status" id="seedStatus" role="status" aria-live="polite"></p>
+            <div class="group">
+              <p class="sub">Arrangement</p>
+              <div class="opts" id="layoutOpts"></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-n="4">Say it sincerely</legend>
+            <div class="fields">
+              <label class="f" for="headline">Headline
+                <input type="text" id="headline" maxlength="28" autocomplete="off">
+              </label>
+              <div class="row2">
+                <label class="f" for="toName">To
+                  <input type="text" id="toName" maxlength="24" value="Maya" autocomplete="off">
+                </label>
+                <label class="f" for="fromName">From
+                  <input type="text" id="fromName" maxlength="24" value="Sam" autocomplete="off">
+                </label>
+              </div>
+              <label class="f" for="message">Message
+                <textarea id="message" maxlength="120">Hope your year is full of sunshine. Plant this and watch the wish bloom.</textarea>
+                <span class="cnt" id="msgCount">0 / 120</span>
+              </label>
+            </div>
+            <div class="group">
+              <p class="sub">Lettering</p>
+              <div class="opts" id="fontOpts"></div>
+            </div>
+            <div class="group">
+              <p class="sub">Ink color</p>
+              <div class="opts" id="inkOpts"></div>
+              <p class="warn" id="inkWarn" role="status" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-n="5">Finishing touches</legend>
+            <div class="group">
+              <p class="sub">Envelope</p>
+              <div class="opts" id="envOpts"></div>
+            </div>
+            <div class="fields">
+              <label class="check" for="twine"><input type="checkbox" id="twine"><span>Hemp twine bow</span><em>+$0.75</em></label>
+              <label class="check" for="tag"><input type="checkbox" id="tag"><span>Seed-paper gift tag</span><em>+$0.75</em></label>
+              <label class="f" id="tagWrap" for="tagText" hidden>Tag text
+                <input type="text" id="tagText" maxlength="20" placeholder="For Maya" autocomplete="off">
+              </label>
+              <label class="f" for="backNote">Note on the back (optional)
+                <textarea id="backNote" maxlength="90" placeholder="P.S. Water it every morning."></textarea>
+                <span class="cnt" id="backCount">0 / 90</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="buy">
+            <div class="qty" role="group" aria-label="Quantity">
+              <button type="button" id="qMinus" aria-label="Fewer cards">–</button>
+              <output id="qVal" aria-live="polite">1</output>
+              <button type="button" id="qPlus" aria-label="More cards">+</button>
+            </div>
+            <button type="button" class="btn btn-accent" id="addBtn">Add to seed pouch · <span id="addTotal">$5.50</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="basket" class="tint">
+    <div class="wrap">
+      <div class="basket" aria-live="polite">
+        <h2 style="font-size:2.2rem">Your seed pouch</h2>
+        <ul id="basketList"></ul>
+        <p class="empty" id="basketEmpty">Your pouch is empty. Sow a card in the studio or open a sincere favorite, then add it.</p>
+        <div class="total"><span>Total</span><span id="basketTotal">$0.00</span></div>
+        <div>
+          <button type="button" class="btn btn-accent" id="checkoutBtn">Continue to checkout</button>
+          <p class="note" id="checkoutNote" style="margin-top:12px">Payments are not connected in this preview.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="eco" id="eco">
+    <div class="wrap" style="padding-block:80px">
+      <div class="ecohead">
+        <h2>Better for the soil, start to finish</h2>
+        <p>Every part of the card is picked to leave the ground better than it found it.</p>
+      </div>
+      <ul class="eco-grid">
+        <li><svg width="38" height="38" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="4" width="18" height="24" rx="3"/><path d="M12 11h8M12 16h8M12 21h5"/></svg><span class="tag">Paper</span><b>Upcycled fibers</b><span>Unbleached, post-consumer paper like egg cartons and grocery bags.</span></li>
+        <li><svg width="38" height="38" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="16" cy="19" rx="5" ry="8" transform="rotate(35 16 19)"/><path d="M16 9c0-3 1-4 4-5"/></svg><span class="tag">Seeds</span><b>Native wildflowers</b><span>Regional, non-GMO mixes with deep roots that feed local bees and butterflies.</span></li>
+        <li><svg width="38" height="38" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4C16 4 7 14 7 20a9 9 0 0018 0C25 14 16 4 16 4z"/></svg><span class="tag">Color</span><b>Plant-based pigments</b><span>Food-grade colors such as beet juice that feed the soil bacteria.</span></li>
+        <li><svg width="38" height="38" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 26C6 12 14 6 26 6c0 12-6 20-20 20z"/><path d="M6 26L18 14"/></svg><span class="tag">Boosters</span><b>Botanical extras</b><span>Coffee grounds, tea leaves and flower petals add nitrogen and natural tannins.</span></li>
+        <li><svg width="38" height="38" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22c4-4 8-4 12 0s8 4 12 0"/><path d="M4 14c4-4 8-4 12 0s8 4 12 0"/></svg><span class="tag">Soil</span><b>Breaks down fast</b><span>Spongy paper that soaks up water and turns into rich organic matter.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">Questions, sincerely</span>
+        <h2>Before you plant</h2>
+      </div>
+      <div class="faq">
+        <details><summary>When is the best time to plant the card?</summary><p>Plant annuals like marigold, zinnia, cosmos and sunflower after your last spring frost. Forget-me-nots do well sown in late summer or fall for spring blooms.</p></details>
+        <details><summary>Will the rose really grow?</summary><p>It can, but roses are slow from seed. Expect leafy growth the first season and flowers in the second. Pair it with a faster flower like cosmos or sweet pea so the card gives you blooms sooner.</p></details>
+        <details><summary>Can it grow in a pot?</summary><p>Yes. Fill a pot with damp potting mix, lay the card on top, cover with a thin layer of soil, and keep it moist. Pick shorter varieties like marigold, forget-me-not or basil for small pots.</p></details>
+        <details><summary>Can I write on it and mail it?</summary><p>Yes. Use a ballpoint pen or pencil. The card is flat and light, so it travels like any other greeting card. Keep it dry until it is planted.</p></details>
+        <details><summary>What goes on the back of the card?</summary><p>Planting steps, the seeds inside, and an optional note from you. Choose a note in step 5 and flip the preview to see it.</p></details>
+        <details><summary>How long until I see flowers?</summary><p>Seedlings usually appear in one to three weeks. Most annual flowers bloom about eight to fourteen weeks after sprouting, depending on the variety and the weather.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><svg width="34" height="34" viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="19" fill="#FBF1E2"/><path d="M19 31V18" stroke="#34412C" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M19 21c-5.5 0-8.5-3-8.5-8.5 5.5 0 8.5 3 8.5 8.5Z" fill="#B3262E"/><path d="M19 18c0-4.5 2.8-7.5 7.5-7.5 0 4.5-2.8 7.5-7.5 7.5Z" fill="#34412C"/></svg><span class="wm"><i>S</i>eeds of Sincerity</span></a>
+    <p>Say it sincerely. Watch it grow.</p>
+  </div>
+</footer>
+
+<dialog id="flowerDlg" aria-labelledby="dlgName">
+  <div class="dlg-top"><div class="dream" id="dlgDream" aria-hidden="true"></div><span id="dlgBloom"></span><button type="button" class="dlg-x" id="dlgX" aria-label="Close">×</button></div>
+  <div class="dlg-body">
+    <h3 id="dlgName"></h3>
+    <p class="latin" id="dlgLatin"></p>
+    <p class="meaning" id="dlgMeaning"></p>
+    <dl class="facts" id="dlgFacts"></dl>
+    <p id="dlgNote" style="color:var(--muted)"></p>
+    <div class="dlg-actions">
+      <button type="button" class="btn btn-accent" id="dlgAdd"></button>
+      <button type="button" class="btn btn-ghost" id="dlgClose">Close</button>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var SEEDS = [
+    { id: 'rose', name: 'Rose', latin: 'Rosa', meaning: 'Love, said plainly', color: '#D81E5B', center: '#7E1230', type: 'rose', petals: 5, groups: ['sun'], sun: 'Full sun', bloom: 'Year 2', height: '3 ft', note: 'Slow starter. Leaves first, then romance.' },
+    { id: 'cosmos', name: 'Cosmos', latin: 'Cosmos bipinnatus', meaning: 'Peace and harmony', color: '#EE4C95', center: '#F4B63A', type: 'wide', petals: 8, groups: ['sun'], sun: 'Full sun', bloom: '8–12 wks', height: '36 in', note: 'Airy, tall, and happy in poor soil.' },
+    { id: 'zinnia', name: 'Zinnia', latin: 'Zinnia elegans', meaning: 'Lasting affection', color: '#F25C54', center: '#F6C445', type: 'layer', petals: 12, groups: ['sun'], sun: 'Full sun', bloom: '8–10 wks', height: '24 in', note: 'Bold color that bees and butterflies love.' },
+    { id: 'marigold', name: 'Marigold', latin: 'Tagetes patula', meaning: 'Warmth and good cheer', color: '#F6A21E', center: '#9A3B12', type: 'ruffle', petals: 14, groups: ['sun'], sun: 'Full sun', bloom: '8–10 wks', height: '12 in', note: 'Cheerful and tough. Good for beginners.' },
+    { id: 'sunflower', name: 'Sunflower', latin: 'Helianthus annuus', meaning: 'Loyalty and joy', color: '#F9B814', center: '#5A3318', type: 'daisy', petals: 18, groups: ['sun'], sun: 'Full sun', bloom: '10–14 wks', height: '48 in', note: 'The big one. Needs room to reach up.' },
+    { id: 'sweetpea', name: 'Sweet pea', latin: 'Lathyrus odoratus', meaning: 'Thank you for a lovely time', color: '#B46BE0', center: '#E9CDF7', type: 'sweet', petals: 3, groups: ['sun'], sun: 'Full sun', bloom: '10–12 wks', height: '6 ft', note: 'Fragrant climber. Give it a trellis.' },
+    { id: 'poppy', name: 'Poppy', latin: 'Papaver rhoeas', meaning: 'Remembrance and comfort', color: '#E8362A', center: '#2B1D1A', type: 'cup', petals: 4, groups: ['sun'], sun: 'Full sun', bloom: '8–10 wks', height: '18 in', note: 'Papery petals. Sow in cool weather.' },
+    { id: 'cornflower', name: 'Cornflower', latin: 'Centaurea cyanus', meaning: 'Hope and delicacy', color: '#3E6FE0', center: '#2E2058', type: 'star', petals: 12, groups: ['sun'], sun: 'Full sun', bloom: '8–10 wks', height: '24 in', note: 'Bright blue, easy, and good for pollinators.' },
+    { id: 'calendula', name: 'Calendula', latin: 'Calendula officinalis', meaning: 'Comfort and joy', color: '#F78B1F', center: '#7A3E10', type: 'daisy', petals: 24, groups: ['sun'], sun: 'Full sun', bloom: '8–10 wks', height: '18 in', note: 'Sunny orange with edible petals.' },
+    { id: 'snapdragon', name: 'Snapdragon', latin: 'Antirrhinum majus', meaning: 'Grace and strength', color: '#F26D9C', center: '#FFD3E0', type: 'spike', petals: 6, fs: 1.5, groups: ['sun', 'shade'], sun: 'Sun to part shade', bloom: '10–14 wks', height: '24 in', note: 'Tall spikes of ruffled blooms.' },
+    { id: 'forgetmenot', name: 'Forget-me-not', latin: 'Myosotis sylvatica', meaning: 'True love and remembrance', color: '#4A90E8', center: '#F6E27A', type: 'small', petals: 5, groups: ['shade'], sun: 'Part shade', bloom: 'Next spring', height: '8 in', note: 'Tiny blue blooms. Suits shady corners.' },
+    { id: 'lavender', name: 'Lavender', latin: 'Lavandula angustifolia', meaning: 'Devotion and calm', color: '#8B63D6', center: '#CDB9F2', type: 'spike', petals: 9, fs: 1, groups: ['herb', 'sun'], sun: 'Full sun', bloom: 'Year 2', height: '24 in', note: 'Fragrant spikes. Leaves first, flowers next year.' },
+    { id: 'chamomile', name: 'Chamomile', latin: 'Matricaria chamomilla', meaning: 'Patience and rest', color: '#FFFFFF', center: '#F2C230', type: 'daisy', petals: 14, groups: ['herb', 'sun'], sun: 'Full sun', bloom: '8–10 wks', height: '18 in', note: 'Small daisies you can brew into tea.' },
+    { id: 'basil', name: 'Basil', latin: 'Ocimum basilicum', meaning: 'Good wishes', color: '#3E9B53', center: '#2A6E3A', type: 'leaf', petals: 6, groups: ['herb', 'sun'], sun: 'Full sun', bloom: 'Harvest in 4–6 wks', height: '18 in', note: 'A herb for the kitchen windowsill.' }
+  ];
+  var FILTERS = [{ id: 'all', name: 'All' }, { id: 'sun', name: 'Full sun' }, { id: 'shade', name: 'Part shade' }, { id: 'herb', name: 'Herbs' }];
+  var PAPERS = [
+    { id: 'blossom', name: 'Blossom', hex: '#FFC2D4', ink: '#3B2420', speck: 'rgba(120,40,70,.32)' },
+    { id: 'sunshine', name: 'Sunshine', hex: '#FFE48A', ink: '#3B2420', speck: 'rgba(110,70,10,.34)' },
+    { id: 'sky', name: 'Sky', hex: '#BEE3F8', ink: '#23325A', speck: 'rgba(30,60,100,.32)' },
+    { id: 'tangerine', name: 'Tangerine', hex: '#FFC48C', ink: '#3B2420', speck: 'rgba(120,60,10,.34)' },
+    { id: 'mint', name: 'Mint', hex: '#C7EFD8', ink: '#24402F', speck: 'rgba(20,80,50,.3)' },
+    { id: 'lilac', name: 'Lilac', hex: '#D9CCF5', ink: '#3A2A63', speck: 'rgba(60,40,110,.3)' },
+    { id: 'oat', name: 'Oat', hex: '#EADCC6', ink: '#3B2420', speck: 'rgba(80,50,20,.34)' },
+    { id: 'kraft', name: 'Kraft', hex: '#DDBF92', ink: '#2E1C0E', speck: 'rgba(80,45,15,.38)' },
+    { id: 'evergreen', name: 'Evergreen', hex: '#2F4A38', ink: '#F6EFE0', speck: 'rgba(255,255,255,.3)' }
+  ];
+  var OCCASIONS = [
+    { id: 'birthday', name: 'Birthday', hl: 'Happy birthday' },
+    { id: 'thanks', name: 'Thank you', hl: 'Thank you' },
+    { id: 'congrats', name: 'Congratulations', hl: 'Congratulations' },
+    { id: 'getwell', name: 'Get well', hl: 'Get well soon' },
+    { id: 'thinking', name: 'Thinking of you', hl: 'Thinking of you' },
+    { id: 'anniversary', name: 'Anniversary', hl: 'Happy anniversary' }
+  ];
+  var SIZES = [{ id: 'mini', name: 'Mini', dim: '3.5 × 5 in', price: 4, scale: .84 }, { id: 'classic', name: 'Classic', dim: '5 × 7 in', price: 5.5, scale: 1 }, { id: 'grand', name: 'Grand', dim: '6 × 8.5 in', price: 7.5, scale: 1 }];
+  var BORDERS = [{ id: 'none', name: 'None' }, { id: 'thin', name: 'Thin line' }, { id: 'double', name: 'Double line' }];
+  var LAYOUTS = [{ id: 'bouquet', name: 'Bouquet' }, { id: 'meadow', name: 'Meadow' }, { id: 'cascade', name: 'Cascade' }];
+  var FONTS = [{ id: 'modern', name: 'Modern' }, { id: 'script', name: 'Script' }, { id: 'hand', name: 'Handwritten' }, { id: 'serif', name: 'Classic' }];
+  var INKS = [{ id: 'auto', name: 'Auto', hex: null }, { id: 'espresso', name: 'Espresso', hex: '#3B2420' }, { id: 'wine', name: 'Wine', hex: '#6B1D2A' }, { id: 'forest', name: 'Forest', hex: '#2F4A35' }, { id: 'blue', name: 'Ink blue', hex: '#23325A' }, { id: 'cream', name: 'Cream', hex: '#FBF1E2' }];
+  var ENVS = [{ id: 'kraft', name: 'Kraft', hex: '#C9A57A' }, { id: 'cream', name: 'Cream', hex: '#F1E6D2' }, { id: 'blush', name: 'Blush', hex: '#EFC1C6' }, { id: 'sage', name: 'Sage', hex: '#AEBFA0' }, { id: 'plum', name: 'Plum', hex: '#6D3B4F' }];
+  var VIEWS = [{ id: 'front', name: 'Front' }, { id: 'back', name: 'Back' }];
+  var LAY = {
+    bouquet: { 1: [[100, 56, 44]], 2: [[64, 62, 36], [138, 50, 38]], 3: [[50, 66, 30], [102, 44, 38], [152, 68, 30]] },
+    meadow: { 1: [[100, 64, 42]], 2: [[60, 70, 34], [140, 62, 34]], 3: [[36, 76, 26], [100, 58, 34], [164, 72, 26]] },
+    cascade: { 1: [[138, 54, 46]], 2: [[148, 48, 40], [84, 76, 30]], 3: [[152, 44, 38], [96, 66, 30], [44, 90, 24]] }
+  };
+  var BASE_STATE = { occasion: 'birthday', paper: 'blossom', seeds: ['cosmos', 'marigold'], hl: 'Happy birthday', to: 'Maya', from: 'Sam', msg: 'Hope your year is full of sunshine. Plant this and watch the wish bloom.', size: 'classic', layout: 'bouquet', font: 'modern', ink: 'auto', border: 'none', env: 'kraft', twine: false, tag: false, tagText: '', backNote: '', qty: 1, filter: 'all', view: 'front' };
+  var COMBOS = [
+    { name: 'Birthday Brights', bg: ['#F29A1F', '#E4466B', '#8A2236'], tilt: '-3deg', st: { occasion: 'birthday', paper: 'blossom', seeds: ['zinnia', 'marigold', 'cosmos'], hl: 'Happy birthday', to: 'Maya', from: 'Sam', msg: 'Hope your year is full of sunshine. Plant this and watch the wish bloom.' } },
+    { name: 'Gratitude Garden', bg: ['#4F7FE0', '#4F8EE8', '#1F2F6B'], tilt: '2deg', st: { occasion: 'thanks', paper: 'sky', seeds: ['forgetmenot', 'cornflower'], hl: 'Thank you', to: 'Jo', from: 'Priya', msg: 'You helped more than you know. Here is something small that grows.', font: 'hand', layout: 'meadow' } },
+    { name: 'Big Congrats', bg: ['#F7B80E', '#F29A1F', '#6B3A12'], tilt: '-2deg', st: { occasion: 'congrats', paper: 'tangerine', seeds: ['sunflower'], hl: 'Congratulations', to: 'Alex', from: 'The team', msg: 'You earned every bit of it. Plant this one tall.', border: 'thin', size: 'grand' } },
+    { name: 'Get Well Garden', bg: ['#6FBF8A', '#E8E0A0', '#2E5B3F'], tilt: '3deg', st: { occasion: 'getwell', paper: 'mint', seeds: ['chamomile', 'basil', 'lavender'], hl: 'Get well soon', to: 'Dad', from: 'Lena', msg: 'Rest up. Brew the chamomile, smell the lavender, and feel better.', font: 'serif', layout: 'meadow', border: 'double', twine: true } },
+    { name: 'Evergreen Poppy', bg: ['#E8452B', '#F29A9A', '#4A1218'], tilt: '-3deg', st: { occasion: 'thinking', paper: 'evergreen', seeds: ['poppy', 'cosmos'], hl: 'Thinking of you', to: 'Sofia', from: 'Ben', msg: 'No reason, just you on my mind. Wishing you a bright week.', font: 'serif', layout: 'cascade' } },
+    { name: 'Rose Promise', bg: ['#D6335B', '#F4A6B8', '#5A1624'], tilt: '2deg', st: { occasion: 'anniversary', paper: 'oat', seeds: ['rose', 'sweetpea'], hl: 'Happy anniversary', to: 'Rosa', from: 'Chris', msg: 'Another year of us. Let us plant something to look at together.', font: 'script', layout: 'cascade', border: 'thin', size: 'grand', twine: true } }
+  ];
+  var BASE_EXTRA = 0.5, TWINE = 0.75, TAG = 0.75, MAXSEEDS = 3;
+  var state = clone(BASE_STATE);
+  var basket = [];
+  var $ = function (id) { return document.getElementById(id); };
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function full(st) { var o = clone(BASE_STATE), k; for (k in st) o[k] = st[k]; return o; }
+  function byId(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return list[0]; }
+  function money(n) { return '$' + n.toFixed(2); }
+  function names(ids) { return ids.map(function (id) { return byId(SEEDS, id).name; }).join(', '); }
+  function unitOf(st) { return byId(SIZES, st.size).price + BASE_EXTRA * (st.seeds.length - 1) + (st.twine ? TWINE : 0) + (st.tag ? TAG : 0); }
+  function toast(msg) { var t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(function () { t.classList.remove('on'); }, 2400); }
+
+  // Color helpers
+  function rgb(h) { h = h.replace('#', ''); return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)]; }
+  function mix(a, b, t) { var x = rgb(a), y = rgb(b); return '#' + [0, 1, 2].map(function (i) { var v = Math.round(x[i] * (1 - t) + y[i] * t); return (v < 16 ? '0' : '') + v.toString(16); }).join(''); }
+  function lum(h) { var c = rgb(h).map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; }
+  function ratio(a, b) { var l1 = lum(a), l2 = lum(b); return (Math.max(l1, l2) + .05) / (Math.min(l1, l2) + .05); }
+  function inkOf(st) { var i = byId(INKS, st.ink); return i.hex || byId(PAPERS, st.paper).ink; }
+
+  // Flower drawing: flat, tonal, no outlines
+  function shade(c, t) { return mix(c, '#2B0A14', t); }
+  function tint(c, t) { return mix(c, '#FFFFFF', t); }
+  function petal(len, wid, round) {
+    var k = round === undefined ? .55 : round, f = function (v) { return v.toFixed(1); };
+    return 'M0 0C' + f(wid * .9) + ' ' + f(-len * .2) + ' ' + f(wid * (.8 + k * .5)) + ' ' + f(-len * (.7 + k * .1)) + ' 0 ' + f(-len) +
+      'C' + f(-wid * (.8 + k * .5)) + ' ' + f(-len * (.7 + k * .1)) + ' ' + f(-wid * .9) + ' ' + f(-len * .2) + ' 0 0Z';
+  }
+  function ring(n, len, wid, round, fill, start) {
+    var g = '', i;
+    for (i = 0; i < n; i++) g += '<path d="' + petal(len, wid, round) + '" fill="' + fill + '" transform="rotate(' + ((start || 0) + i * 360 / n).toFixed(1) + ')"/>';
+    return g;
+  }
+  function dots(n, rad, size, fill) {
+    var g = '', i;
+    for (i = 0; i < n; i++) { var a = i * 2 * Math.PI / n; g += '<circle cx="' + (Math.cos(a) * rad).toFixed(1) + '" cy="' + (Math.sin(a) * rad).toFixed(1) + '" r="' + size.toFixed(1) + '" fill="' + fill + '"/>'; }
+    return g;
+  }
+  function bloom(s, r) {
+    var c = s.color, light = lum(c) > .7, d = shade(c, light ? .14 : .28), dd = shade(c, light ? .3 : .5), l = tint(c, .38), n = s.petals, g = '', i, t;
+    var ctr = s.center, ctrD = shade(ctr, .4), ctrL = tint(ctr, .4);
+    switch (s.type) {
+      case 'leaf':
+        g += ring(3, r * .98, r * .4, .2, d, 0) + ring(3, r * .78, r * .36, .2, c, 60);
+        for (i = 0; i < 6; i++) g += '<line x1="0" y1="0" x2="0" y2="' + (-r * (i % 2 ? .62 : .8)).toFixed(1) + '" stroke="' + dd + '" stroke-width="1" opacity=".6" transform="rotate(' + (i * 60) + ')"/>';
+        return g + '<circle r="' + (r * .08).toFixed(1) + '" fill="' + dd + '"/>';
+      case 'rose':
+        g += ring(5, r * .98, r * .56, 1, d, 0) + ring(5, r * .76, r * .46, 1, c, 36) + ring(5, r * .52, r * .34, 1, tint(c, .2), 0) + ring(5, r * .3, r * .2, 1, c, 36);
+        return g + '<path d="M0 ' + (-r * .05) + ' a' + (r * .08) + ' ' + (r * .08) + ' 0 1 1 ' + (r * .08) + ' ' + (r * .08) + ' a' + (r * .17) + ' ' + (r * .17) + ' 0 1 1 ' + (-r * .22) + ' ' + (-r * .12) + '" fill="none" stroke="' + dd + '" stroke-width="1.2" stroke-linecap="round"/>';
+      case 'ruffle':
+        g += ring(n, r * .98, r * .22, .9, d, 0) + ring(n, r * .8, r * .21, .9, c, 180 / n) + ring(Math.round(n * .7), r * .55, r * .19, .9, l, 0);
+        return g + '<circle r="' + (r * .17).toFixed(1) + '" fill="' + ctr + '"/>' + dots(8, r * .09, r * .022, ctrL);
+      case 'layer':
+        g += ring(n, r * .98, r * .2, .35, d, 0) + ring(n, r * .78, r * .2, .35, c, 180 / n) + ring(n, r * .52, r * .17, .35, l, 90 / n);
+        return g + '<circle r="' + (r * .15).toFixed(1) + '" fill="' + ctr + '"/>' + dots(6, r * .08, r * .02, ctrL);
+      case 'wide':
+        g += ring(n, r * .92, r * .44, 1, d, 180 / n) + ring(n, r * .98, r * .42, 1, c, 0) + ring(n, r * .62, r * .17, .8, l, 0);
+        return g + '<circle r="' + (r * .17).toFixed(1) + '" fill="' + ctr + '"/>' + dots(8, r * .09, r * .022, ctrD);
+      case 'daisy':
+        var w = n > 20 ? r * .075 : r * .13, big = s.id === 'sunflower';
+        g += ring(n, r * .98, w, .3, d, 180 / n) + ring(n, r * .9, w, .3, c, 0);
+        g += '<circle r="' + (r * (big ? .4 : .24)).toFixed(1) + '" fill="' + ctr + '"/><circle r="' + (r * (big ? .3 : .16)).toFixed(1) + '" fill="' + ctrD + '" opacity=".75"/>';
+        return g + dots(big ? 14 : 8, r * (big ? .2 : .1), r * (big ? .028 : .02), ctrL);
+      case 'small':
+        g += ring(5, r * .92, r * .44, 1, c, 0) + ring(5, r * .55, r * .26, 1, tint(c, .55), 36);
+        return g + '<circle r="' + (r * .17).toFixed(1) + '" fill="' + ctr + '"/><circle r="' + (r * .07).toFixed(1) + '" fill="' + ctrD + '"/>';
+      case 'cup':
+        g += ring(4, r * .98, r * .66, 1, d, 45) + ring(4, r * .88, r * .6, 1, c, 0) + ring(4, r * .5, r * .3, 1, l, 45);
+        return g + '<circle r="' + (r * .2).toFixed(1) + '" fill="' + ctr + '"/>' + dots(12, r * .3, r * .03, dd);
+      case 'star':
+        g += ring(n, r * .98, r * .09, .2, d, 0) + ring(n, r * .82, r * .1, .2, c, 180 / n) + ring(n, r * .56, r * .08, .2, tint(c, .38), 0);
+        return g + '<circle r="' + (r * .1).toFixed(1) + '" fill="' + ctr + '"/>' + dots(7, r * .07, r * .02, ctrL);
+      case 'sweet':
+        g += '<g transform="translate(0 ' + (r * .4).toFixed(1) + ')">';
+        g += '<path d="' + petal(r * .95, r * .62, 1) + '" fill="' + d + '" transform="rotate(-42)"/><path d="' + petal(r * .95, r * .62, 1) + '" fill="' + d + '" transform="rotate(42)"/>';
+        g += '<path d="' + petal(r * .88, r * .56, 1) + '" fill="' + c + '"/><path d="' + petal(r * .55, r * .3, 1) + '" fill="' + tint(c, .4) + '" opacity=".8"/>';
+        return g + '<ellipse cx="0" cy="' + (-r * .05).toFixed(1) + '" rx="' + (r * .1).toFixed(1) + '" ry="' + (r * .14).toFixed(1) + '" fill="' + dd + '"/></g>';
+      case 'spike':
+        var fs = s.fs || 1;
+        g += '<line x1="0" y1="' + (-r * .95).toFixed(1) + '" x2="0" y2="' + (r * .95).toFixed(1) + '" stroke="#5F8F6E" stroke-width="1.4" stroke-linecap="round"/>';
+        for (i = 0; i < n; i++) {
+          t = i / (n - 1);
+          var y = r * .85 - t * r * 1.7, len = r * (.46 - .16 * t) * fs, wd = r * (.15 - .05 * t) * fs, fill = i % 3 === 0 ? d : (i % 3 === 1 ? c : l);
+          g += '<path d="' + petal(len, wd, .8) + '" fill="' + fill + '" transform="translate(0 ' + y.toFixed(1) + ') rotate(-52)"/><path d="' + petal(len, wd, .8) + '" fill="' + (i % 3 === 0 ? c : d) + '" transform="translate(0 ' + y.toFixed(1) + ') rotate(52)"/>';
+        }
+        return g + '<circle cx="0" cy="' + (-r * .96).toFixed(1) + '" r="' + (r * .09).toFixed(1) + '" fill="' + ctr + '"/>';
+    }
+    return g;
+  }
+  function bloomSvg(s, size) { return '<svg viewBox="-50 -50 100 100" width="' + size + '" height="' + size + '" aria-hidden="true">' + bloom(s, 46) + '</svg>'; }
+
+  function rng(seed) {
+    var a = seed;
+    return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  }
+
+  // Soft-focus poster background: blurred flower + film grain + dust
+  var dreamN = 0;
+  function dreamSvg(c1, c2, c3, seed) {
+    var id = ++dreamN, r = rng(seed || 7), i, out = '', petals = '', dust = '';
+    for (i = 0; i < 16; i++) petals += '<ellipse cx="500" cy="130" rx="108" ry="200" fill="' + c1 + '" opacity=".92" transform="rotate(' + (i * 22.5) + ' 500 330)"/>';
+    for (i = 0; i < 12; i++) petals += '<ellipse cx="500" cy="205" rx="92" ry="140" fill="' + c2 + '" opacity=".9" transform="rotate(' + (i * 30 + 10) + ' 500 330)"/>';
+    petals += '<circle cx="500" cy="330" r="150" fill="' + c3 + '"/><circle cx="520" cy="320" r="90" fill="' + mix(c3, '#000000', .25) + '" opacity=".8"/>';
+    var stems = '<rect x="440" y="520" width="64" height="240" rx="30" fill="#7E735F" opacity=".55" transform="rotate(-3 470 600)"/><rect x="515" y="520" width="58" height="240" rx="28" fill="#6F6553" opacity=".5" transform="rotate(4 540 600)"/>';
+    for (i = 0; i < 46; i++) {
+      var x = r() * 1000, y = r() * 700, l = 5 + r() * 16, a = r() * Math.PI;
+      dust += '<line x1="' + x.toFixed(0) + '" y1="' + y.toFixed(0) + '" x2="' + (x + Math.cos(a) * l).toFixed(0) + '" y2="' + (y + Math.sin(a) * l).toFixed(0) + '" stroke="#fff" stroke-width="1.3" opacity="' + (.25 + r() * .4).toFixed(2) + '"/>';
+      if (i % 3 === 0) dust += '<circle cx="' + (r() * 1000).toFixed(0) + '" cy="' + (r() * 700).toFixed(0) + '" r="' + (1 + r() * 1.6).toFixed(1) + '" fill="#fff" opacity=".55"/>';
+    }
+    return '<svg viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>' +
+      '<linearGradient id="dg' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9DBC8"/><stop offset="1" stop-color="#D8C5AD"/></linearGradient>' +
+      '<filter id="db' + id + '" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="20"/></filter>' +
+      '<filter id="dn' + id + '"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4"/><feColorMatrix type="saturate" values="0"/></filter></defs>' +
+      '<rect width="1000" height="700" fill="url(#dg' + id + ')"/><g filter="url(#db' + id + ')">' + stems + petals + '</g>' +
+      '<rect width="1000" height="700" filter="url(#dn' + id + ')" opacity=".5" style="mix-blend-mode:overlay"/>' + dust + '</svg>';
+  }
+  function dreamFor(st) {
+    var a = byId(SEEDS, st.seeds[0]), b = byId(SEEDS, st.seeds[1] || st.seeds[0]);
+    return dreamSvg(a.color === '#FFFFFF' ? '#F1E3CF' : a.color, b.color === '#FFFFFF' ? '#EBCB9B' : b.color, mix(a.color === '#FFFFFF' ? '#B58A5A' : a.color, '#3A0E16', .62), 11);
+  }
+
+  function speckSvg(paper) {
+    var r = rng(paper.id.length * 977 + paper.hex.charCodeAt(2)), out = '', i;
+    for (i = 0; i < 70; i++) {
+      var x = r() * 100, y = r() * 140, rx = .35 + r() * .7, ry = rx * (.5 + r() * .5);
+      out += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="' + rx.toFixed(2) + '" ry="' + ry.toFixed(2) + '" fill="' + paper.speck + '" transform="rotate(' + Math.round(r() * 180) + ' ' + x.toFixed(1) + ' ' + y.toFixed(1) + ')"/>';
+    }
+    return '<svg class="speck" viewBox="0 0 100 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + out + '</svg>';
+  }
+  function leafPath(len) { var f = function (v) { return v.toFixed(1); }; return 'M0 0C' + f(len * .3) + ' ' + f(-len * .3) + ' ' + f(len * .72) + ' ' + f(-len * .3) + ' ' + f(len) + ' 0C' + f(len * .72) + ' ' + f(len * .3) + ' ' + f(len * .3) + ' ' + f(len * .3) + ' 0 0Z'; }
+  function artSvg(seedIds, paper, layout) {
+    var pts = LAY[layout][seedIds.length], stems = '', heads = '', dark = paper.id === 'evergreen';
+    var stemColor = dark ? '#9AD9AE' : '#3F7D5B', leafColor = dark ? '#74C48F' : '#5C9E74';
+    var disk = dark ? mix(paper.hex, '#FFFFFF', .1) : mix(paper.hex, '#FFFFFF', .5);
+    var dc = layout === 'cascade' ? [138, 58, 54] : (layout === 'meadow' ? [100, 66, 56] : [100, 58, 56]);
+    var back = '<circle cx="' + dc[0] + '" cy="' + dc[1] + '" r="' + dc[2] + '" fill="' + disk + '"/>';
+    pts.forEach(function (p, i) {
+      var s = byId(SEEDS, seedIds[i]), x = p[0], y = p[1], r = p[2], sy = y + r * .35, d, lx, ly, left = x < 100 || (layout === 'cascade' && i % 2);
+      if (layout === 'bouquet') {
+        d = 'M' + x + ' ' + sy + ' Q ' + ((x + 100) / 2 + (x < 100 ? -8 : 8)) + ' 110 100 130'; lx = (x * 2 + 100) / 3 + (x < 100 ? 2 : -2); ly = 98 - i * 4;
+      } else if (layout === 'meadow') {
+        d = 'M' + x + ' ' + sy + ' Q ' + (x + (i % 2 ? 6 : -6)) + ' ' + ((sy + 130) / 2) + ' ' + x + ' 130'; lx = x + (i % 2 ? 3 : -3); ly = sy + (130 - sy) * .58;
+      } else {
+        d = 'M' + x + ' ' + sy + ' Q ' + ((x + 20) / 2 + 10) + ' ' + (sy + 36) + ' 20 130'; lx = x - (x - 20) * .32; ly = sy + (130 - sy) * .5;
+      }
+      stems += '<path d="' + d + '" stroke="' + stemColor + '" stroke-width="1.8" fill="none" stroke-linecap="round"/>';
+      stems += '<path d="' + leafPath(17) + '" fill="' + leafColor + '" transform="translate(' + lx.toFixed(1) + ' ' + ly.toFixed(1) + ') rotate(' + (left ? -148 : -32) + ')"/>';
+      var rot = (s.type === 'spike' || s.type === 'sweet') ? (x < 100 ? -8 : 8) : i * 17;
+      heads += '<g transform="translate(' + x + ' ' + y + ') rotate(' + rot + ')">' + bloom(s, r) + '</g>';
+    });
+    return '<svg class="art" viewBox="0 0 200 130" aria-hidden="true">' + back + stems + heads + '</svg>';
+  }
+  function mk(tag, cls, txt) { var p = document.createElement(tag); if (cls) p.className = cls; if (txt != null) p.textContent = txt; return p; }
+  function renderCard(el, st, side) {
+    var paper = byId(PAPERS, st.paper);
+    el.dataset.font = st.font; el.dataset.border = st.border; el.dataset.side = side || 'front';
+    el.style.setProperty('--paper', paper.hex);
+    el.style.setProperty('--ink-c', inkOf(st));
+    var copy = mk('div', 'copy');
+    if (side === 'back') {
+      el.innerHTML = speckSvg(paper);
+      copy.appendChild(mk('p', 'hl', 'Plant me'));
+      var ol = mk('ol', 'stepl');
+      ['Tear it up or plant it whole.', 'Cover with ¼ inch (6 mm) of soil.', 'Keep it damp and in the sun.', 'Wait one to three weeks.'].forEach(function (t, i) {
+        var li = mk('li'); li.appendChild(mk('b', null, String(i + 1))); li.appendChild(mk('span', null, t)); ol.appendChild(li);
+      });
+      copy.appendChild(ol);
+      if (st.backNote.trim()) copy.appendChild(mk('p', 'bnote', st.backNote.trim()));
+      copy.appendChild(mk('p', 'bseeds', 'Inside: ' + names(st.seeds)));
+    } else {
+      el.innerHTML = speckSvg(paper) + artSvg(st.seeds, paper, st.layout);
+      copy.appendChild(mk('p', 'hl', st.hl || ' '));
+      if (st.to.trim()) copy.appendChild(mk('p', 'to', 'Dear ' + st.to.trim() + ','));
+      copy.appendChild(mk('p', 'msg', st.msg));
+      if (st.from.trim()) copy.appendChild(mk('p', 'from', 'Sincerely, ' + st.from.trim()));
+    }
+    el.appendChild(copy);
+    el.appendChild(mk('p', 'seal', 'Seeds of Sincerity'));
+  }
+  function envSvg(hex) {
+    var flap = mix(hex, '#000000', .08);
+    return '<svg width="46" height="34" viewBox="0 0 46 34" aria-hidden="true"><rect x="1" y="1" width="44" height="32" rx="3" fill="' + hex + '" stroke="rgba(59,36,32,.35)"/><path d="M2 3l21 16L44 3" fill="' + flap + '" stroke="rgba(59,36,32,.35)"/></svg>';
+  }
+
+  // Build option controls
+  function radios(host, name, list, cls, fmt) {
+    list.forEach(function (o) {
+      var l = document.createElement('label'); l.className = cls;
+      l.innerHTML = '<input type="radio" name="' + name + '" value="' + o.id + '">' + fmt(o);
+      host.appendChild(l);
+    });
+  }
+  function chipF(o) { return '<span>' + o.name + (o.dim ? ' <em>' + o.dim + '</em>' : '') + '</span>'; }
+  function swF(o) { return '<i style="--c:' + (o.hex || '#EFE6D8') + (o.hex ? '' : ';background:conic-gradient(#EFE6D8,#3B2420 50%,#EFE6D8)') + '"></i>' + o.name; }
+  radios($('occasionOpts'), 'occasion', OCCASIONS, 'chip', chipF);
+  radios($('paperOpts'), 'paper', PAPERS, 'sw', swF);
+  radios($('sizeOpts'), 'size', SIZES, 'chip', function (o) { return '<span>' + o.name + ' <em>' + o.dim + ' · ' + money(o.price) + '</em></span>'; });
+  radios($('borderOpts'), 'border', BORDERS, 'chip', chipF);
+  radios($('layoutOpts'), 'layout', LAYOUTS, 'chip', chipF);
+  radios($('fontOpts'), 'font', FONTS, 'chip', chipF);
+  radios($('inkOpts'), 'ink', INKS, 'sw sm', swF);
+  radios($('envOpts'), 'env', ENVS, 'sw sm', swF);
+  radios($('seedFilters'), 'sfilter', FILTERS, 'chip sm', chipF);
+  radios($('viewOpts'), 'view', VIEWS, 'chip', chipF);
+  var seedGrid = $('seedGrid');
+  SEEDS.forEach(function (s) {
+    var d = document.createElement('div'); d.className = 'seed'; d.dataset.id = s.id;
+    d.innerHTML = '<button type="button" class="pick" aria-pressed="false">' + bloomSvg(s, 60) + '<b>' + s.name + '</b><small>' + s.sun + ' · ' + s.height + '<br>' + s.bloom + '</small><small>' + s.note + '</small></button><button type="button" class="info" aria-label="About ' + s.name + '">i</button>';
+    seedGrid.appendChild(d);
+  });
+
+  var stageKey = '';
+  function sync() {
+    var st = state;
+    ['occasion', 'paper', 'size', 'border', 'layout', 'font', 'ink', 'env', 'view'].forEach(function (k) {
+      document.querySelectorAll('input[name="' + k + '"]').forEach(function (i) { i.checked = i.value === st[k]; });
+    });
+    document.querySelectorAll('input[name="sfilter"]').forEach(function (i) { i.checked = i.value === st.filter; });
+    document.querySelectorAll('.seed').forEach(function (d) {
+      var s = byId(SEEDS, d.dataset.id);
+      d.querySelector('.pick').setAttribute('aria-pressed', st.seeds.indexOf(s.id) > -1 ? 'true' : 'false');
+      d.hidden = !(st.filter === 'all' || s.groups.indexOf(st.filter) > -1);
+    });
+    $('seedSummary').textContent = 'Chosen (' + st.seeds.length + ' of ' + MAXSEEDS + '): ' + names(st.seeds);
+    $('tagWrap').hidden = !st.tag; $('twine').checked = st.twine; $('tag').checked = st.tag;
+    var size = byId(SIZES, st.size);
+    $('stage').style.setProperty('--sc', size.scale);
+    $('sizeBadge').textContent = size.name + ' · ' + size.dim;
+    var key = st.seeds.join(',');
+    if (key !== stageKey) { stageKey = key; $('stageDream').innerHTML = dreamFor(st); }
+    renderCard($('liveCard'), st, st.view);
+    $('liveCard').setAttribute('aria-label', (st.view === 'back' ? 'Back of card: planting steps' : 'Front of card: ' + st.hl) + ', ' + byId(PAPERS, st.paper).name + ' paper, ' + names(st.seeds));
+    var u = unitOf(st), n = st.seeds.length, rows = '';
+    rows += '<div><dt>' + size.name + ' card (' + size.dim + ')</dt><dd>' + money(size.price) + '</dd></div>';
+    rows += '<div><dt>' + n + (n === 1 ? ' seed type' : ' seed types') + '</dt><dd>' + (n > 1 ? '+' + money(BASE_EXTRA * (n - 1)) : 'Included') + '</dd></div>';
+    if (st.twine) rows += '<div><dt>Hemp twine bow</dt><dd>+' + money(TWINE) + '</dd></div>';
+    if (st.tag) rows += '<div><dt>Gift tag' + (st.tagText.trim() ? ' “' + st.tagText.trim() + '”' : '') + '</dt><dd>+' + money(TAG) + '</dd></div>';
+    $('breakdown').innerHTML = rows;
+    $('unitPrice').textContent = money(u);
+    var env = byId(ENVS, st.env);
+    $('envRow').innerHTML = envSvg(env.hex) + '<span>' + env.name + ' paper envelope with a paper seal</span>';
+    var paperHex = byId(PAPERS, st.paper).hex, rr = ratio(inkOf(st), paperHex);
+    $('inkWarn').textContent = rr < 3.5 ? 'This ink is hard to read on ' + byId(PAPERS, st.paper).name + ' paper. Try Auto.' : '';
+    $('qVal').textContent = st.qty;
+    $('addTotal').textContent = money(u * st.qty);
+    $('msgCount').textContent = st.msg.length + ' / 120';
+    $('backCount').textContent = st.backNote.length + ' / 90';
+  }
+  function loadState(src) {
+    var st = full(src); st.qty = 1; st.filter = 'all'; st.view = 'front';
+    state = st;
+    $('headline').value = st.hl; $('toName').value = st.to; $('fromName').value = st.from; $('message').value = st.msg;
+    $('tagText').value = st.tagText; $('backNote').value = st.backNote; $('seedStatus').textContent = '';
+    sync();
+  }
+
+  // Events
+  $('builderForm').addEventListener('change', function (e) {
+    var n = e.target.name, v = e.target.value;
+    if (n === 'occasion') { state.occasion = v; state.hl = byId(OCCASIONS, v).hl; $('headline').value = state.hl; }
+    else if (['paper', 'size', 'border', 'layout', 'font', 'ink', 'env', 'view'].indexOf(n) > -1) state[n] = v;
+    else if (n === 'sfilter') state.filter = v;
+    else if (e.target.id === 'twine') state.twine = e.target.checked;
+    else if (e.target.id === 'tag') { state.tag = e.target.checked; if (state.tag) setTimeout(function () { $('tagText').focus(); }, 0); }
+    else return;
+    sync();
+  });
+  $('viewOpts').addEventListener('change', function (e) { state.view = e.target.value; sync(); });
+  function toggleSeed(id) {
+    var i = state.seeds.indexOf(id), st = $('seedStatus'), nm = byId(SEEDS, id).name, msg;
+    if (i > -1) {
+      if (state.seeds.length === 1) { msg = 'Keep at least one seed type on your card.'; st.textContent = msg; return msg; }
+      state.seeds.splice(i, 1); msg = nm + ' removed.';
+    } else {
+      if (state.seeds.length >= MAXSEEDS) { msg = 'You can pick up to three. Remove one to swap.'; st.textContent = msg; return msg; }
+      state.seeds.push(id); msg = nm + ' added.';
+    }
+    st.textContent = msg; sync(); return msg;
+  }
+  seedGrid.addEventListener('click', function (e) {
+    var d = e.target.closest('.seed'); if (!d) return;
+    if (e.target.closest('.info')) openDlg(d.dataset.id); else if (e.target.closest('.pick')) toggleSeed(d.dataset.id);
+  });
+  $('headline').addEventListener('input', function (e) { state.hl = e.target.value; sync(); });
+  $('toName').addEventListener('input', function (e) { state.to = e.target.value; sync(); });
+  $('fromName').addEventListener('input', function (e) { state.from = e.target.value; sync(); });
+  $('message').addEventListener('input', function (e) { state.msg = e.target.value; sync(); });
+  $('tagText').addEventListener('input', function (e) { state.tagText = e.target.value; sync(); });
+  $('backNote').addEventListener('input', function (e) { state.backNote = e.target.value; sync(); });
+  $('qMinus').addEventListener('click', function () { state.qty = Math.max(1, state.qty - 1); sync(); });
+  $('qPlus').addEventListener('click', function () { state.qty = Math.min(20, state.qty + 1); sync(); });
+  $('builderForm').addEventListener('submit', function (e) { e.preventDefault(); });
+
+  // Flower pop-up
+  var dlg = $('flowerDlg'), dlgId = null;
+  function openDlg(id) {
+    var s = byId(SEEDS, id); dlgId = id;
+    $('dlgDream').innerHTML = dreamSvg(s.color === '#FFFFFF' ? '#F1E3CF' : s.color, mix(s.color === '#FFFFFF' ? '#EBCB9B' : s.color, '#FFFFFF', .25), mix(s.color === '#FFFFFF' ? '#B58A5A' : s.color, '#3A0E16', .6), 5);
+    $('dlgBloom').innerHTML = bloomSvg(s, 120);
+    $('dlgName').textContent = s.name; $('dlgLatin').textContent = s.latin;
+    $('dlgMeaning').textContent = 'Often said to mean: ' + s.meaning.toLowerCase();
+    $('dlgFacts').innerHTML = '<div><dt>Light</dt><dd>' + s.sun + '</dd></div><div><dt>Blooms</dt><dd>' + s.bloom + '</dd></div><div><dt>Height</dt><dd>' + s.height + '</dd></div>';
+    $('dlgNote').textContent = s.note;
+    setDlgBtn();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+  }
+  function setDlgBtn() { $('dlgAdd').textContent = state.seeds.indexOf(dlgId) > -1 ? 'Remove from my card' : 'Add to my card'; }
+  $('dlgAdd').addEventListener('click', function () { var m = toggleSeed(dlgId); setDlgBtn(); toast(m); });
+  function closeDlg() { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
+  $('dlgClose').addEventListener('click', closeDlg); $('dlgX').addEventListener('click', closeDlg);
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeDlg(); });
+
+  // Sincere favorites gallery
+  var grid = $('comboGrid');
+  COMBOS.forEach(function (c) {
+    var st = full(c.st);
+    var art = mk('article', 'combo'), scene = mk('div', 'scene'), dr = mk('div', 'dream');
+    dr.setAttribute('aria-hidden', 'true'); dr.innerHTML = dreamSvg(c.bg[0], c.bg[1], c.bg[2], c.name.length * 13);
+    var card = mk('div', 'card'); card.style.setProperty('--tilt', c.tilt); card.setAttribute('aria-hidden', 'true'); renderCard(card, st, 'front');
+    scene.appendChild(dr); scene.appendChild(card);
+    var meta = mk('div', 'meta');
+    meta.appendChild(mk('h3', null, c.name));
+    meta.appendChild(mk('p', null, byId(SIZES, st.size).name + ' · ' + byId(PAPERS, st.paper).name + ' paper · ' + names(st.seeds)));
+    var row = mk('div', 'row'), price = mk('b', null, money(unitOf(st)));
+    var btn = mk('button', 'btn btn-strong btn-sm', 'Make it yours'); btn.type = 'button'; btn.setAttribute('aria-label', 'Open ' + c.name + ' in the studio');
+    btn.addEventListener('click', function () {
+      loadState(c.st);
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      $('build').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+    row.appendChild(price); row.appendChild(btn); meta.appendChild(row);
+    art.appendChild(scene); art.appendChild(meta); grid.appendChild(art);
+  });
+
+  // Seed pouch
+  function describe(st) {
+    var bits = [byId(SIZES, st.size).name, byId(PAPERS, st.paper).name + ' paper', names(st.seeds), byId(LAYOUTS, st.layout).name.toLowerCase(), byId(FONTS, st.font).name.toLowerCase() + ' lettering', byId(ENVS, st.env).name.toLowerCase() + ' envelope'];
+    if (st.border !== 'none') bits.push(byId(BORDERS, st.border).name.toLowerCase());
+    if (st.twine) bits.push('twine bow');
+    if (st.tag) bits.push('gift tag' + (st.tagText.trim() ? ' “' + st.tagText.trim() + '”' : ''));
+    if (st.backNote.trim()) bits.push('back note');
+    return bits.join(' · ');
+  }
+  function renderBasket() {
+    var list = $('basketList'); list.innerHTML = '';
+    var total = 0, count = 0;
+    basket.forEach(function (it, idx) {
+      var li = document.createElement('li'), line = it.unit * it.qty; total += line; count += it.qty;
+      var s = mk('strong', null, it.title + ' × ' + it.qty), d = mk('p', null, it.desc + ' · ' + money(it.unit) + ' each'), a = mk('span', 'amt', money(line));
+      var r = mk('button', null, 'Remove'); r.type = 'button'; r.setAttribute('aria-label', 'Remove ' + it.title);
+      r.addEventListener('click', function () { basket.splice(idx, 1); renderBasket(); });
+      li.appendChild(s); li.appendChild(d); li.appendChild(a); li.appendChild(r); list.appendChild(li);
+    });
+    $('basketEmpty').hidden = basket.length > 0;
+    $('basketTotal').textContent = money(total);
+    $('navCount').textContent = count;
+    $('checkoutBtn').disabled = basket.length === 0;
+  }
+  $('addBtn').addEventListener('click', function () {
+    basket.push({ title: (state.hl || 'Custom') + ' card for ' + (state.to.trim() || 'a friend'), desc: describe(state), unit: unitOf(state), qty: state.qty });
+    renderBasket(); toast('Added to your seed pouch');
+  });
+  $('checkoutBtn').addEventListener('click', function () { $('checkoutNote').textContent = 'Checkout is not set up yet, so no order was placed.'; });
+
+  // Hero
+  $('heroDream').innerHTML = dreamSvg('#E9935A', '#CB4A3E', '#6E1A26', 3);
+  renderCard($('fan1'), full(COMBOS[1].st), 'front');
+  renderCard($('fan2'), full(COMBOS[0].st), 'front');
+  renderCard($('fan3'), full(COMBOS[5].st), 'front');
+  $('headline').value = state.hl;
+  sync(); renderBasket();
+})();
+</script>
+
+</body>
+</html>
